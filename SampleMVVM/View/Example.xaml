@@ -18,7 +18,7 @@
                     FontSize="36"/>
 
             <Button Content="Второй UserControl"
-                    Command="{Binding }"/>
+                    Command="{Binding ShowSecondUserControl}"/>
 
         </StackPanel>
     </Grid>

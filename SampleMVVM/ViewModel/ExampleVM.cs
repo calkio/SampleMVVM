@@ -1,4 +1,5 @@
 ﻿using SampleMVVM.Infastructure;
+using SampleMVVM.Infastructure.Command;
 using SampleMVVM.ViewModel.Base;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,21 @@ namespace SampleMVVM.ViewModel
 
         #region КОМАНДЫ
 
-        public ICommand GetCommand() => new LambdaCommand(OnCommand, CanCommand);
-
-        private bool CanCommand(object p) => true;
-
-        private void OnCommand(object p)
+        public ICommand ShowSecondUserControl
+        {
+            get
+            {
+                return new RelayCommand(
+                    (_) => ShowSecondUserControlImpl(),
+                    (_) => CanShowSecondUserControl());
+            }
+        }
+        private bool CanShowSecondUserControl() => true;
+        private void ShowSecondUserControlImpl()
         {
             _mvvm.Content = new ExampleVM2(_mvvm);
         }
+
 
         #endregion
 

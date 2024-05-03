@@ -26,15 +26,6 @@ namespace SampleMVVM.ViewModel
 
         #region КОМАНДЫ
 
-        public ICommand GetCommand() => new LambdaCommand(OnCommand, CanCommand);
-
-        private bool CanCommand(object p) => true;
-
-        private void OnCommand(object p)
-        {
-
-        }
-
         #endregion
 
 
