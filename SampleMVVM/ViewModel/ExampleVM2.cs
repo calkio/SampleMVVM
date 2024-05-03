@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace SampleMVVM.ViewModel
 {
-    internal class ExampleVM : BaseVM
+    internal class ExampleVM2 : BaseVM
     {
         #region ПОЛЯ
 
@@ -19,7 +19,7 @@ namespace SampleMVVM.ViewModel
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
+        private string _firstLabel = "Hello world2";
         public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
 
         #endregion
@@ -32,13 +32,13 @@ namespace SampleMVVM.ViewModel
 
         private void OnCommand(object p)
         {
-            _mvvm.Content = new ExampleVM2(_mvvm);
+
         }
 
         #endregion
 
 
-        public ExampleVM(MainVM mvvm)
+        public ExampleVM2(MainVM mvvm)
         {
             _mvvm = mvvm;
         }
